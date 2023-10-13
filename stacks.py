@@ -1,22 +1,22 @@
 # Easy
 def is_valid_paranthesis(s: str) -> bool:
-        openings = ["(", "{", "["]
-        closings = [")", "}", "]"]
-        stack = []
-        char_map = dict(zip(closings, openings))
+    openings = ["(", "{", "["]
+    closings = [")", "}", "]"]
+    stack = []
+    char_map = dict(zip(closings, openings))
 
-        for i in s:
-            if i in openings:
-                stack.append(i)
-            elif i in closings:
-                if not stack or stack.pop() != char_map[i]:
-                    return False
-        
-        return len(stack) == 0
+    for i in s:
+        if i in openings:
+            stack.append(i)
+        elif i in closings:
+            if not stack or stack.pop() != char_map[i]:
+                return False
+
+    return len(stack) == 0
+
 
 # Medium
 class MinStack:
-
     def __init__(self):
         self.stack = []
         self.min_stack = []
