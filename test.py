@@ -1,3 +1,5 @@
 
-def test():
-    print("Hello Test")
+def greeting(name):
+    print(f"Hello {name}")
+
+greeting("Kwame")
